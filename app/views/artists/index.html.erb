@@ -1,29 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Artists</h1>
+<div class="container" style="text-align: center">
+  <h1>Artists</h1>
+</div>
 
-<table class = "table table-striped table-hover">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Genre</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @artists.each do |artist| %>
+<div class="container">
+  <table class = "table table-striped table-hover table-responsive{-sm|-md|-lg|-xl}">
+    <caption>List of Artists with Genre</caption>
+    <thead>
       <tr>
-        <td><%= artist.name %></td>
-        <td><%= artist.genre %></td>
-        <td><%= link_to 'Show', artist %></td>
-        <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
-        <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Name</th>
+        <th>Genre</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+
+    <tbody>
+      <% @artists.each do |artist| %>
+        <tr>
+          <td><%= artist.name %></td>
+          <td><%= artist.genre.try(:name) %></td>
+          <td><%= link_to 'Show', artist %></td>
+          <td><%= link_to 'Edit', edit_artist_path(artist) %></td>
+          <td><%= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
 
 <br>
-
-<%= link_to 'New Artist', new_artist_path %>
+<div class="container">
+<%= link_to 'New Artist', new_artist_path, class: 'btn btn-info' %>
+</div>

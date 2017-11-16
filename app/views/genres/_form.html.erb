@@ -11,12 +11,14 @@
     </div>
   <% end %>
 
+<div class="container" style="text-align: center">
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :genre_name %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit("Do It!", class: 'btn btn-success' ) %>
   </div>
+</div>
 <% end %>

@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
-
+<div class="container" style="text-align: center">
   <div class="field">
     <%= form.label :name %>
     <%= form.text_field :name, id: :song_name %>
@@ -18,10 +18,11 @@
 
   <div class="field">
     <%= form.label :artist_id %>
-    <%= form.text_field :artist_id, id: :song_artist_id %>
+    <%= form.collection_select :artist_id, Artist.all, :id, :name %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit("Do It!", class: 'btn btn-success' ) %>
   </div>
+</div>
 <% end %>
