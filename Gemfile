@@ -37,6 +37,7 @@ gem 'stamp'
 gem 'font-awesome-rails'
 gem 'bootstrap-sass'
 gem 'jquery-rails'
+gem 'annotate'
 
 
 # Use Capistrano for deployment
