@@ -18,7 +18,7 @@
 
   <div class="field container" style="text-align: center">
     <%= form.label :genre_id %>
-    <%= form.collection_select :genre_id, Genre.all, :id, :name %>
+    <%= form.collection_select :genre_id, Genre.all, :id, :name, {:prompt => 'Select Genre'} %>
   </div>
 
   <div class="actions container" style="text-align: center">

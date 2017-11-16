@@ -10,19 +10,19 @@
       </ul>
     </div>
   <% end %>
-<div class="container" style="text-align: center">
+<div class="container form-group" style="text-align: center">
   <div class="field">
     <%= form.label :name %>
-    <%= form.text_field :name, id: :song_name %>
+    <%= form.text_field :name, id: :song_name, class: 'form-control' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= form.label :artist_id %>
-    <%= form.collection_select :artist_id, Artist.all, :id, :name %>
+    <%= form.collection_select :artist_id, Artist.all, :id, :name, {:prompt => 'Select Artist'}, class: 'form-control' %>
   </div>
 
-  <div class="actions">
-    <%= form.submit("Do It!", class: 'btn btn-success' ) %>
+  <div class="actions form-group">
+    <%= form.submit("Do It!", class: 'btn btn-success form-control' ) %>
   </div>
 </div>
 <% end %>
