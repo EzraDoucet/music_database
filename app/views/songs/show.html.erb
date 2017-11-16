@@ -8,7 +8,7 @@
 
 <h3>
   <strong>Artist:</strong>
-  <%= @song.artist.try(:name) %>
+  <%= link_to @song.artist.try(:name), artist_path %>
 </h3>
 
 <%= link_to 'Edit', edit_song_path(@song), class: 'btn btn-info' %> |

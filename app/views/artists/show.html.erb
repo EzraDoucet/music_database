@@ -8,8 +8,19 @@
 
  <h3>
    <strong>Genre:</strong>
-   <%= @artist.genre.try(:name) %>
+   <%= link_to @artist.genre.try(:name), genre_path(@artist.genre) %>
  </h3>
+
+ <h3>
+  <strong>Songs by:</strong>
+ </h3>
+
+ <ul>
+  <% @artist.songs.order('name').each do |songs_by| %>
+
+  <li> <%= link_to songs_by.name, song_path(songs_by) %> </li>
+  <% end %>
+ </ul>
 
 <%= link_to 'Edit', edit_artist_path(@artist), class: 'btn btn-info' %> |
 <%= link_to 'Back', artists_path, class: 'btn btn-info' %>
