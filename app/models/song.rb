@@ -2,6 +2,10 @@ class Song < ApplicationRecord
   belongs_to :artist
 
   validates :name, :artist_id, :artist, presence: true
+  validates_uniqueness_of :name, scope: :artist_id
+
+  scope :recent, -> (minutes_past=60) { where("created_at > ?", minutes_past.minutes.ago) }
+  scope :today, -> { where('DATE(created_at = ?)', Date.today) }
 
 end
 
